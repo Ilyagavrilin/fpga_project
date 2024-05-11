@@ -1,0 +1,25 @@
+|project_asm_2
+clk => clk~0.DATAIN
+reset => reset~0.DATAIN
+i_ckey_1 => comb.DATAIN
+i_ckey_2 => comb.DATAIN
+i_ckey_3 => comb.DATAIN
+i_ckey_4 => comb.DATAIN
+o_led_1 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+o_led_2 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+o_led_3 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+o_led_4 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+o_dig_1 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o_dig_2 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o_dig_3 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o_dig_4 <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+o_seg_0 <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+o_seg_1 <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+o_seg_2 <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+o_seg_3 <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+o_seg_4 <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+o_seg_5 <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+o_seg_6 <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+o_seg_7 <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
