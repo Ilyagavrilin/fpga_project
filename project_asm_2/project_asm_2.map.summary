@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun May 12 00:19:03 2024
+Analysis & Synthesis Status : Successful - Mon May 13 15:57:15 2024
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : project_asm_2
 Top-level Entity Name : project_asm_2
 Family : Cyclone IV E
-Total logic elements : 1,755
-    Total combinational functions : 1,755
+Total logic elements : 1,757
+    Total combinational functions : 1,757
     Dedicated logic registers : 28
 Total registers : 28
 Total pins : 22

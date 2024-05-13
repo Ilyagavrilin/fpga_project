@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE6E22) Path("C:/Users/gavri/Desktop/fpga_project/project_asm_2/") File("project_asm_2.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE6E22) Path("C:/Users/gavri/Desktop/build_llvm/fpga_project/project_asm_2/") File("project_asm_2.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -86,7 +86,11 @@ reg [4:0] result3;            // Third segments's value
 
 reg [4:0] LED_BCD;            // Current segments's value (not used)
 
-reg [19:0] refresh_counter;   // Segmens update counter
+reg [19:0] refresh_counter;   // Segments update counter
+
+reg [1:0] btn_reg;
+
+reg [1:0] btn_opcode;
 
 wire [1:0] LED_activating_counter;  // Segment activation counter
 
@@ -112,8 +116,24 @@ parameter val_f   = 8'h8E;  //Value for F
 
 always@(*) begin : block_0
 
-   case (ckey)
-	4'b1111: begin
+	case (ckey[1:0])
+	2'b10: begin
+		result1 = reg1 / 100;
+
+		result2 = (reg1 % 100)/10;
+
+		result3 = reg1 % 10;
+	end
+	2'b01: begin
+		result1 = reg2 / 100;
+
+		result2 = (reg2 % 100)/10;
+
+		result3 = reg2 % 10;
+	end
+	2'b11: begin
+		case (ckey[3:2])
+		2'b00: begin
 		reg [31:0] x;
 
 		integer s;
@@ -156,8 +176,8 @@ always@(*) begin : block_0
 		 result2 = (y % 100)/10;
 
 		 result3 = y % 10;
-	end
-	4'b0111: begin // CLZ instruction
+		end
+	   2'b01: begin // CLZ instruction
 			integer result;
 			result = 8;
 			for (int i = 7; i >= 0; i--) begin
@@ -172,7 +192,7 @@ always@(*) begin : block_0
 
 			result3 =  result % 10;
 	  end
-	4'b1011: begin // CLZ instruction
+	  2'b10: begin // CMUL instruction
 			integer result;
 			result = 0;
 			for (int i = 0; i < 8; i++) begin
@@ -186,22 +206,19 @@ always@(*) begin : block_0
 
 			result3 =  result % 10;
 	  end
-	4'b1110: begin
-		result1 = reg1 / 100;
+	  2'b11: begin // TODO: add more opcodes
+			integer result;
+			result = 0;
+			result1 =  result / 100;
 
-		result2 = (reg1 % 100)/10;
+			result2 = (result % 100)/10;
 
-		result3 = reg1 % 10;
-	end
-	4'b1101: begin
-		result1 = reg2 / 100;
-
-		result2 = (reg2 % 100)/10;
-
-		result3 = reg2 % 10;
+			result3 =  result % 10;
+	  end
+	  endcase
 	end
 	endcase
-
+	
 end
 
 
